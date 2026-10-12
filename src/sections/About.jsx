@@ -1,0 +1,93 @@
+import { Code, Code2, CodeIcon, Terminal } from "lucide-react";
+
+const highlights = [
+  {
+    icon: Code2,
+    title: "Clean Code",
+    description: "Writing maintainable, scalable code",
+  },
+  {
+    icon: Code,
+    title: "Performance",
+    description: "Optimizing apps for maximum speed and efficiency",
+  },
+  {
+    icon: CodeIcon,
+    title: "Modern UI/UX",
+    description: "Crafting beautiful interfaces with Tailwind and React",
+  },
+  {
+    icon: Terminal,
+    title: "Robust Logic",
+    description: "Building reliable, scalable backend APIs and architecture",
+  },
+];
+
+const About = () => {
+  return (
+    <section id="about" className="py-32 relative overflow-hidden">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* LHS */}
+          <div className="space-y-8">
+            <div className="framer">
+              <span className="text-[#f5f5f5] text-sm font-medium tracking-wider uppercase">
+                About Me
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-primary">
+              Building the Future,{" "}
+              <span className="font-serif italic font-normal text-white">
+                one component at a time.
+              </span>
+            </h2>
+
+            <div className="space-y-4 text-[#f5f5f5]">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                laborum iste incidunt dolor sequi voluptate illo quasi nihil
+                ratione quidem accusantium vitae, explicabo, necessitatibus
+                beatae! Qui adipisci in aspernatur odit?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                laborum iste incidunt dolor sequi voluptate illo quasi nihil
+                ratione quidem accusantium vitae, explicabo, necessitatibus
+                beatae! Qui adipisci in aspernatur odit?
+              </p>
+            </div>
+
+            {/* Mission statement */}
+            <div className="glass rounded-2xl p-6 glow-border">
+              <p className="text-lg font-medium italic text-[#f5f5f5]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                laborum iste incidunt dolor sequi voluptate illo quasi nihil
+                ratione quidem accusantium vitae, explicabo, necessitatibus
+                beatae! Qui adipisci in as
+              </p>
+            </div>
+          </div>
+          {/* RHS */}
+          <div className="space-y-6">
+            {highlights.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <div key={index} className="glass p-6 rounded-2xl">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20 text-primary">
+                    <IconComponent className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-[#f5f5f5]">{item.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;

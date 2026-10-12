@@ -1,3 +1,111 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html{
+    scroll-behavior: smooth;
+  }
+  body{
+    background-color: #0f1418;
+    font-family: "inter", sans-serif;
+    color: #f0f2f5;
+  }
+  button{
+    cursor: pointer;
+  }
+
+  .font-serif {
+    font-family: "playfair Display", serif;
+  }
+}
+/* For glass like effect */
+.glass{
+  background-color: color-mix(in srgb, #1a2329 50%, transparent);
+  backdrop-filter: blur(16px);
+  border: 1px solid color-mix(in srgb, #242b32 50%, transparent);
+}
+
+.glass-strong{
+  background-color: color-mix(in srgb, #1a2329 60%, transparent);
+  backdrop-filter: blur(24px);
+  border: 1px solid color-mix(in srgb, #242b32 80%, transparent);
+}
+
+.glow-text{
+  text-shadow: 0 0 30px
+  color-mix(in srgb , #20B2A6 50%, transparent);
+}
+
+.timeline-glow{
+  box-shadow: 0 0 40px
+  color-mix(in srgb, primary 35%, transparent ),
+  0 0 80px color-mix(in srgb, primary 25%, transparent )
+}
+
+@keyframes float {
+  0%,
+  100%{
+    transform: translateY(0);
+  }
+
+  50%{
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float{
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  0% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+
+
+
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0px);
+      filter: blur(0px);
+    }
+  }
+
+  @keyframes slow-drift {
+    0%,100% {
+      transform: translate(0,0);
+    }
+    25% {
+      transform: translate(20px,-30px);
+    }
+    50% {
+      transform: translate(-15px,-20px);
+    }
+    75% {
+      transform: translate(30px,10px);
+    }
+  }
+  .animate-fade-in{
+    animation: fade-in 0.8s ease-out both;
+
+  }
+}
+
