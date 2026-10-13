@@ -8,7 +8,7 @@ const projects = [
     title: "Task Management App",
     description:
       "This Task Manager App (Todo App) is a clean, single-page web application designed to help users organize, track, and clear their daily tasks. Built using modern frontend tools, it offers a dark-themed UI and persistent browser storage.",
-    image: "public/Todo_App.jpeg",
+    image: "/Todo_App.jpeg",
     tags: ["React", "TailwindCSS"],
     link: "https://github.com/davidayodele01/Task-Manager-App-Todo-App-",
     github: "https://github.com/davidayodele01",
@@ -17,7 +17,7 @@ const projects = [
     title: "Landing Page",
     description:
       "A modern, responsive SaaS landing page built with React, Tailwind CSS, and Framer Motion—featuring interactive pricing, slick testimonials, and smooth scroll animations.",
-    image: "public/Landing_page.jpeg",
+    image: "/Landing_page.jpeg",
     tags: ["React", "TailwindCSS", "Framer-motion"],
     link: "https://github.com/davidayodele01/Landing-page---react-framer-motion-and-tailwind-CSS",
     github: "https://github.com/davidayodele01",
