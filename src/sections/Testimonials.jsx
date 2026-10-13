@@ -3,14 +3,14 @@ import { useState } from "react";
 
 const testimonials = [
   {
-    quote: "David is one of the best talented engineer",
+    quote: " Good at communication.",
     author: "Joseph Babajide",
     role: "Frontend Developer",
   },
   {
-    quote: "David is one of the best talented engineer",
-    author: "Victor Ariwolo",
-    role: "Frontend Developer",
+    quote: "A dedicated person, willing to learn and grow.",
+    author: "Miracle Sonye",
+    role: "Product Designer",
   },
 ];
 

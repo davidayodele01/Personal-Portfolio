@@ -1,25 +1,34 @@
 import { Code, Code2, CodeIcon, Terminal } from "lucide-react";
+import { BiBulb } from "react-icons/bi";
+import { FaIdeal } from "react-icons/fa";
+import { FcIdea, FcNoIdea } from "react-icons/fc";
+import { GiIdea } from "react-icons/gi";
+import { MdDraw } from "react-icons/md";
+import { PiTerminalWindowFill } from "react-icons/pi";
 
 const highlights = [
   {
     icon: Code2,
-    title: "Clean Code",
-    description: "Writing maintainable, scalable code",
+    title: "Development",
+    description:
+      "JavaScript (ES6+), HTML5, CSS3, React.js, React Hooks, React Context API, Tailwind CSS, Framer Motion",
   },
   {
-    icon: Code,
-    title: "Performance",
-    description: "Optimizing apps for maximum speed and efficiency",
-  },
-  {
-    icon: CodeIcon,
-    title: "Modern UI/UX",
-    description: "Crafting beautiful interfaces with Tailwind and React",
+    icon: MdDraw,
+    title: "Design",
+    description:
+      "Figma, Wireframing, PrototypingUser Research, User Personas, User Flows, Storyboarding, A/B Testing, Design Systems",
   },
   {
     icon: Terminal,
-    title: "Robust Logic",
-    description: "Building reliable, scalable backend APIs and architecture",
+    title: "Dev Tools & Platforms",
+    description: "Git, GitHub, Visual Studio Code, Vite, Vercel, Trello",
+  },
+  {
+    icon: BiBulb,
+    title: "Concepts",
+    description:
+      " Component-Based Architecture, Responsive/Mobile-First Design, REST API Integration, Cross-Browser Compatibility,  Clear Communication, Attention to Detail, Analytical Thinking, Time Management, Creativity, Team Collaboration",
   },
 ];
 
@@ -44,26 +53,24 @@ const About = () => {
 
             <div className="space-y-4 text-[#f5f5f5]">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-                laborum iste incidunt dolor sequi voluptate illo quasi nihil
-                ratione quidem accusantium vitae, explicabo, necessitatibus
-                beatae! Qui adipisci in aspernatur odit?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-                laborum iste incidunt dolor sequi voluptate illo quasi nihil
-                ratione quidem accusantium vitae, explicabo, necessitatibus
-                beatae! Qui adipisci in aspernatur odit?
+                "A Frontend Developer with a strong UI/UX design background,
+                combining hands-on product design experience including
+                wireframing, prototyping, user research, and design systems with
+                practical React and JavaScript development skills. Experienced
+                in translating user needs into interactive, accessible
+                interfaces and building them in clean code. Adept at
+                collaborating across the full product lifecycle with
+                cross-functional teams to deliver high-performance digital
+                experiences."
               </p>
             </div>
 
             {/* Mission statement */}
             <div className="glass rounded-2xl p-6 glow-border">
               <p className="text-lg font-medium italic text-[#f5f5f5]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-                laborum iste incidunt dolor sequi voluptate illo quasi nihil
-                ratione quidem accusantium vitae, explicabo, necessitatibus
-                beatae! Qui adipisci in as
+                To craft lightning-fast, intuitive, and universally accessible
+                digital experiences that seamlessly bridge human intent and
+                exceptional design.
               </p>
             </div>
           </div>

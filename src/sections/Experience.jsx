@@ -1,25 +1,27 @@
 const experiences = [
   {
-    period: "2022 - present",
-    role: "Product Designer",
-    company: "Techxon Innovation",
-    description: "Leading design for an ecommerce",
-    technologies: ["Figma", "AutoLayout", "Responsiveness"],
+    period: "September 2026 - October 2026",
+    role: "Frontend Internship",
+    company: "Cognorise Infotech Internship",
+    description: "A month internship to build a project, i built my portfolio project during this period",
+    technologies: ["React", "Tailwind CSS", "Javascript", "Responsiveness", "CSS Animation"],
     current: true,
   },
   {
-    period: "2022 - present",
-    role: "Product Designer",
+    period: "March 2025 – April 2026",
+    role: "UI/UX Designer (Hybrid)",
     company: "Techxon Innovation",
-    description: "Leading design for an ecommerce",
+    description:
+      "I lead the design for CarKobo, an all-in-one automotive hub supporting car buying, renting, financing, live auctions",
     technologies: ["Figma", "AutoLayout", "Responsiveness"],
     current: false,
   },
   {
-    period: "2022 - present",
-    role: "Product Designer",
-    company: "Techxon Innovation",
-    description: "Leading design for an ecommerce",
+    period: "March 2024 – September 2025",
+    role: "UI/UX Designer (Contract)",
+    company: "Vezeti Telecommunications,Nigeria",
+    description:
+      "Designed wireframes and high-fidelity screens for a B2B dashboard used by business teams to coordinate workflow.",
     technologies: ["Figma", "AutoLayout", "Responsiveness"],
     current: false,
   },
@@ -31,22 +33,26 @@ const Experience = () => {
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
 
       {/* Main Container with responsive horizontal padding */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-[#f5f5f5] text-sm font-medium tracking-wider uppercase">
+        <div className="max-w-3xl mb-16 items-center justify-center flex flex-col">
+          <span className="text-primary/70  text-sm font-medium tracking-wider uppercase items-center justify-center">
             Career Journey
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-primary">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-primary items-center justify-center">
             Experience that{" "}
             <span className="font-serif italic font-normal text-white">
-              speak volumes
+              speak volumes.
             </span>
           </h2>
-          <p className="text-[#f5f5f5] mt-4">
+          <p className="text-[#f5f5f5] mt-4 items-center justify-center">
             A timeline of a professional growth, from curious beginner to senior
-            engineer leading teams and building products at scale
+            engineer
+            <br />
           </p>
+          <span className="text-[#f5f5f5] mt-1 items-center justify-center">
+            leading teams and building products at scale
+          </span>
         </div>
 
         {/* Timeline */}
@@ -81,7 +87,7 @@ const Experience = () => {
                       {experience.role}
                     </h3>
                     <p className="text-[#f5f5f5]">{experience.company}</p>
-                    <p className="text-sm text-[#f5f5f5] mt-4">
+                    <p className="text-sm text-gray-200 mt-4">
                       {experience.description}
                     </p>
                     <div
@@ -92,7 +98,7 @@ const Experience = () => {
                       {experience.technologies.map((technology, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 bg-[#5c5a5a] text-xs rounded-full text-[#f5f5f5]"
+                          className="px-3 py-1 border border-white/50 text-xs rounded-full text-gray-200"
                         >
                           {technology}
                         </span>

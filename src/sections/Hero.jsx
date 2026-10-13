@@ -25,9 +25,9 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-lg text-[#f5f5f5] max-w-lg pt-4">
-              Hi, I&apos;m David Ayodele — a Frontend developer specialized in
-              React, Tailwind CSS, and JavaScript. I build scalable, performant
-              web applications that users love.
+              "Hi, I'm David Ayodele, a Frontend Developer who transforms
+              complex ideas into lightning-fast, pixel-perfect, and engaging web
+              experiences using React, Tailwind CSS, and JavaScript."
             </p>
           </div>
           {/* CTA */}

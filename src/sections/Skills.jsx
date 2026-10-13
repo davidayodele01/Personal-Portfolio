@@ -7,6 +7,8 @@ const skills = [
   "VScode",
   "Vercel",
   "Github",
+  "Vite",
+  "Trello",
   "Git",
   "Rest Api",
 ];

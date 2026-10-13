@@ -1,3 +1,4 @@
+import Footer from "./layout/Footer";
 import NavBar from "./layout/NavBar";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
@@ -30,13 +31,16 @@ function App() {
       {/* Main Content */}
       <div className="relative z-10">
         <NavBar />
-        <Hero />
-        <Skills />
-        <About />
-        <Projects />
-        <Experience />
-        <Testimonials />
-        <Contact/>
+        <main>
+          <Hero />
+          <Skills />
+          <About />
+          <Projects />
+          <Experience />
+          <Testimonials />
+          <Contact />
+        </main>
+        <Footer/>
       </div>
     </div>
   );

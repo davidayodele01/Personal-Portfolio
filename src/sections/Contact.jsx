@@ -1,7 +1,14 @@
-import { Mail, MapPin, Phone, Send } from "lucide-react";
-import {Button} from "../component/Button"
+import {
+  AlertCircle,
+  CheckCircle,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+} from "lucide-react";
+import { Button } from "../component/Button";
 import { useState } from "react";
-
+import emailjs from "@emailjs/browser";
 
 const contactInfo = [
   {
@@ -29,18 +36,68 @@ const Contact = () => {
     name: "",
     email: "",
     message: "",
-  })
+  });
 
-  const handleSubmit = async(e) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({
+    type: null,
+    message: "",
+  });
+
+  // Submit function
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  }
+
+    setIsLoading(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error(
+          "EmailJS configuration is missing. Please check your environment variables.",
+        );
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        publicKey,
+      );
+
+      setSubmitStatus({
+        type: "success",
+        message: "Message sent successfully! I'll get back to you soon.",
+      });
+
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+      setSubmitStatus({
+        type: "error",
+        message:
+          err.message || "Failed to send message. Please try again later.",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="py-32 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full ">
+      <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight rounded-full blur-3xl" />
       </div>
-      <div container mx-auto px-6 relative z-10>
+
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary/70 text-sm font-medium tracking-wider">
@@ -52,15 +109,15 @@ const Contact = () => {
               something great
             </span>
           </h2>
-          <p className="text-[#f5f5f5] ">
+          <p className="text-[#f5f5f5]">
             Have a project in mind? I'd love to hear about it. Send me a message
-            and let's discuss how we can work together
+            and let's discuss how we can work together.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <div className="glass p-8 rounded-3xl border border-primary/30">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   className="block text-sm font-medium mb-2"
@@ -73,9 +130,14 @@ const Contact = () => {
                   type="text"
                   required
                   placeholder="Enter your full name"
-                  className="w-full px-4 py-3 bg-[#5c5a5a] rounded-xl border border focus:border-primary focus-ring-1 focus-ring-primary outline-none transition-all"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  className="w-full px-4 py-3 bg-[#111111] rounded-xl border border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 />
               </div>
+
               <div>
                 <label
                   className="block text-sm font-medium mb-2"
@@ -84,12 +146,18 @@ const Contact = () => {
                   Email
                 </label>
                 <input
+                  id="email"
                   type="email"
                   required
                   placeholder="Enter your email address"
-                  className="w-full px-4 py-3 bg-[#5c5a5a] rounded-xl border border focus:border-primary focus-ring-1 focus-ring-primary outline-none transition-all"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  className="w-full px-4 py-3 bg-[#111111] rounded-xl border border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 />
               </div>
+
               <div>
                 <label
                   className="block text-sm font-medium mb-2"
@@ -98,25 +166,86 @@ const Contact = () => {
                   Message
                 </label>
                 <textarea
+                  id="message"
                   rows={5}
                   required
                   placeholder="Your message"
-                  type="text"
-                  className="w-full px-4 py-3 bg-[#5c5a5a] rounded-xl border border focus:border-primary focus-ring-1 focus-ring-primary outline-none transition-all resize-none"
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                  className="w-full px-4 py-3 bg-[#111111] rounded-xl border border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
                 />
               </div>
 
-              <Button className="w-full flex" type="submit" size="lg">
-                <span>
-                  Send Message <Send />
-                </span>
+              <Button
+                className="w-full flex items-center justify-center gap-2"
+                type="submit"
+                size="lg"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>Sending...</>
+                ) : (
+                  <>
+                    Send Message <Send className="w-5 h-5" />
+                  </>
+                )}
               </Button>
+
+              {submitStatus.type && (
+                <div
+                  className={`flex items-center gap-3 p-4 rounded-xl ${
+                    submitStatus.type === "success"
+                      ? "bg-green-500/10 border border-green-500/20 text-green-500"
+                      : "bg-red-500/10 border border-red-500/20 text-red-500"
+                  }`}
+                >
+                  {submitStatus.type === "success" ? (
+                    <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                  ) : (
+                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                  )}
+                  <span className="text-sm">{submitStatus.message}</span>
+                </div>
+              )}
             </form>
+          </div>
+
+          {/* Contact Information */}
+          <div className="spce-y-6 ">\
+            <div className="glass rounded-3xl p-8">
+              <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+              <div className="space-y-4">{contactInfo.map((item, index) => (
+                <a key={index} href={item.href} className="flex items-center gap-4 p-4 rounded-xl hover:bg-[#5c5a5a] transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center "><item.icons className="w-5 h-5 text-primary" /></div>
+                  <div>
+                    <div className="text-sm text-[#f5f5f5]">
+                      {item.label}
+                    </div>
+                    <div className="font-medium">
+                      {item.value}
+                    </div>
+                  </div>
+                </a>
+              ))} </div>
+            </div>
+
+            {/* Availability Card */}
+            <div className="glass rounded-3xl mt-4 p-8 border border-primary/30">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"/>
+                <span className="font-medium">Currently Availability</span>
+              </div>
+              <p className="text-[#f5f5f5] text-sm">
+                I'm currently open to new opportunities and exciting projects.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
-}
- 
+};
+
 export default Contact;

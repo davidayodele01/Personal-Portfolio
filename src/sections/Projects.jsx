@@ -1,23 +1,26 @@
 import { useState } from "react";
 import { ArrowUp, ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+ 
 
 const projects = [
   {
     title: "Task Management App",
-    description: "A task management todo app",
-    image: "/WhatsApp_Image_2024-09-03_at_00.59.22-removebg-preview (1).png",
+    description:
+      "This Task Manager App (Todo App) is a clean, single-page web application designed to help users organize, track, and clear their daily tasks. Built using modern frontend tools, it offers a dark-themed UI and persistent browser storage.",
+    image: "public/Todo_App.jpeg",
     tags: ["React", "TailwindCSS"],
-    link: "#",
-    github: "#",
+    link: "https://github.com/davidayodele01/Task-Manager-App-Todo-App-",
+    github: "https://github.com/davidayodele01",
   },
   {
     title: "Landing Page",
-    description: "A task management todo app",
-    image: "/WhatsApp_Image_2024-09-03_at_00.59.22-removebg-preview (1).png",
-    tags: ["React", "TailwindCSS"],
-    link: "#",
-    github: "#",
+    description:
+      "A modern, responsive SaaS landing page built with React, Tailwind CSS, and Framer Motion—featuring interactive pricing, slick testimonials, and smooth scroll animations.",
+    image: "public/Landing_page.jpeg",
+    tags: ["React", "TailwindCSS", "Framer-motion"],
+    link: "https://github.com/davidayodele01/Landing-page---react-framer-motion-and-tailwind-CSS",
+    github: "https://github.com/davidayodele01",
   },
   {
     title: "Dashboard",
@@ -25,7 +28,7 @@ const projects = [
     image: "/WhatsApp_Image_2024-09-03_at_00.59.22-removebg-preview (1).png",
     tags: ["React", "TailwindCSS"],
     link: "#",
-    github: "#",
+    github: "https://github.com/davidayodele01",
   },
 ];
 
@@ -52,16 +55,16 @@ const Projects = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-12">
-          <span className="text-[#f5f5f5] text-sm font-medium tracking-wider uppercase">
+          <span className="text-primary/70 text-sm font-medium tracking-wider uppercase">
             Featured Work
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-primary">
             Projects that{" "}
             <span className="font-serif italic font-normal text-white">
               make an impact.
             </span>
           </h2>
-          <p className="text-gray-500">
+          <p className="text-gray-200">
             A selection of my recent work, from complex web applications to
             innovative tools that solve real-world problems.
           </p>
@@ -122,7 +125,7 @@ const Projects = () => {
                   </h3>
                   <ArrowUpRight className="w-5 h-5 text-[#f5f5f5] group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                 </div>
-                <p className="text-[#f5f5f5] text-sm">{project.description}</p>
+                <p className="text-gray-200 text-sm">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
                     <span
