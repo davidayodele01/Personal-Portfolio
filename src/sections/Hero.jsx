@@ -37,7 +37,7 @@ const Hero = () => {
             </Button>
             <a
               href="/resume.pdf"
-              download
+              // download="resume.pdf"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass text-white hover:text-primary transition-colors text-sm font-medium"
             >
               <Download className="w-5 h-5" /> Download CV
@@ -53,7 +53,7 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
             <div className="relative glass rounded-3xl p-2 glow-border">
               <img
-                src="/WhatsApp_Image_2024-09-03_at_00.59.22-removebg-preview (1).png"
+                src="/profile.png"
                 alt="David Ayodele"
                 className="w-full aspect-[4/5] object-cover rounded-2xl"
               />

@@ -10,8 +10,8 @@ const projects = [
       "This Task Manager App (Todo App) is a clean, single-page web application designed to help users organize, track, and clear their daily tasks. Built using modern frontend tools, it offers a dark-themed UI and persistent browser storage.",
     image: "/Todo_App.jpeg",
     tags: ["React", "TailwindCSS"],
-    link: "https://github.com/davidayodele01/Task-Manager-App-Todo-App-",
-    github: "https://github.com/davidayodele01",
+    link: "https://task-manager-app-todo-app.vercel.app/",
+    github: "https://github.com/davidayodele01/Task-Manager-App-Todo-App-",
   },
   {
     title: "Landing Page",
@@ -19,16 +19,17 @@ const projects = [
       "A modern, responsive SaaS landing page built with React, Tailwind CSS, and Framer Motion—featuring interactive pricing, slick testimonials, and smooth scroll animations.",
     image: "/Landing_page.jpeg",
     tags: ["React", "TailwindCSS", "Framer-motion"],
-    link: "https://github.com/davidayodele01/Landing-page---react-framer-motion-and-tailwind-CSS",
-    github: "https://github.com/davidayodele01",
+    link: "https://landing-page-react-framer-motion-an.vercel.app/",
+    github:
+      "https://github.com/davidayodele01/Landing-page---react-framer-motion-and-tailwind-CSS",
   },
   {
     title: "Dashboard",
     description: "A task management todo app",
-    image: "/WhatsApp_Image_2024-09-03_at_00.59.22-removebg-preview (1).png",
-    tags: ["React", "TailwindCSS"],
-    link: "#",
-    github: "https://github.com/davidayodele01",
+    image: "/Dashboard.jpeg",
+    tags: ["React", "TailwindCSS", "JavaScript"],
+    link: "https://admin-dashboard-six-psi-98.vercel.app/",
+    github: "https://github.com/davidayodele01/Admin_Dashboard",
   },
 ];
 
