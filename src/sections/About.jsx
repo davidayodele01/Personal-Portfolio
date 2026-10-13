@@ -36,11 +36,11 @@ const About = () => {
   return (
     <section id="about" className="py-32 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center justify-center">
           {/* LHS */}
-          <div className="space-y-8">
-            <div className="framer">
-              <span className="text-[#f5f5f5] text-sm font-medium tracking-wider uppercase">
+          <div className="space-y-8 items-center justify-center ">
+            <div className="flex nitems-center justify-center">
+              <span className="text-primary/70 text-sm font-medium tracking-wider uppercase">
                 About Me
               </span>
             </div>

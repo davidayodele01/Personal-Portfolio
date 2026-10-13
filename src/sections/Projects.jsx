@@ -25,7 +25,7 @@ const projects = [
   },
   {
     title: "Dashboard",
-    description: "A task management todo app",
+    description: "An Admin dashboard that controls the entire products",
     image: "/Dashboard.jpeg",
     tags: ["React", "TailwindCSS", "JavaScript"],
     link: "https://admin-dashboard-six-psi-98.vercel.app/",

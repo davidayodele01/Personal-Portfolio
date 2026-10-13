@@ -17,7 +17,7 @@ const Skills = () => {
   return (
     <section>
       <div className="mt-20 relative">
-        <p className="text-sm text-[#f5f5f5] mb-6 text-center">
+        <p className="text-sm text-primary/70 mb-6 text-center uppercase">
           Technologies i worked with
         </p>
         <div className="relative overflow-hidden">
