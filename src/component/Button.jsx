@@ -14,7 +14,7 @@ export const Button = ({
   onClick,
   ...props
 }) => {
-  // Base classes for focus, accessibility, layout, and smooth transitions
+  // Base classes for flex layout, focus, accessibility, and smooth transitions
   const baseClasses =
     "inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed select-none";
 
@@ -41,7 +41,7 @@ export const Button = ({
 
   const widthClass = fullWidth ? "w-full" : "";
 
-  // Combine default classes with any custom className overrides
+  // Combine default classes with custom className overrides
   const combinedClasses =
     `${baseClasses} ${variants[variant] || variants.primary} ${sizes[size] || sizes.md} ${widthClass} ${className}`.trim();
 
@@ -53,10 +53,10 @@ export const Button = ({
       className={combinedClasses}
       {...props}
     >
-      {/* Loading Spinner */}
+      {/* Loading Spinner or Left Icon */}
       {isLoading ? (
         <svg
-          className="animate-spin -ml-1 h-4 w-4 text-current"
+          className="animate-spin h-4 w-4 text-current flex-shrink-0"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -76,14 +76,22 @@ export const Button = ({
           />
         </svg>
       ) : (
-        leftIcon
+        leftIcon && (
+          <span className="inline-flex items-center flex-shrink-0">
+            {leftIcon}
+          </span>
+        )
       )}
 
-      {/* Button Text / Content */}
-      <span>{children}</span>
+      {/* Button Content */}
+      {children && <span className="inline-flex items-center">{children}</span>}
 
       {/* Optional Right Icon */}
-      {!isLoading && rightIcon}
+      {!isLoading && rightIcon && (
+        <span className="inline-flex items-center flex-shrink-0">
+          {rightIcon}
+        </span>
+      )}
     </button>
   );
 };

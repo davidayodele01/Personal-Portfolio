@@ -70,10 +70,11 @@ const NavBar = () => {
             ))}
 
             <div className="pt-2">
-              <Button size="md" variants="primary" className="w-full">
+              <Button size="md" className="w-full">
                 Contact Me
               </Button>
             </div>
+            
           </div>
         </div>
       )}
