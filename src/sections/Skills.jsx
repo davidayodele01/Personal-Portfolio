@@ -2,6 +2,7 @@ import { ChevronDown } from "lucide-react";
 
 const skills = [
   "React",
+  "Next.Js",
   "Tailwind CSS",
   "Figma",
   "VScode",
@@ -11,6 +12,7 @@ const skills = [
   "Trello",
   "Git",
   "Rest Api",
+  "Redux Toolkit",
 ];
 
 const Skills = () => {
